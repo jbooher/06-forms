@@ -11,15 +11,44 @@ body {
 
 label {
   display: block;
-  color: #fff;
+  color: #efefef;
   text-transform: uppercase;
+  padding-left: 5px;
+}
+
+textarea, input, select {
+  font-size: 1.2rem;
+  width: 90vw;
+  background-color: #55a4dd;
+  border: 2px solid #efefef;
+  border-radius: 3px;
+  color: #efefef;
+  padding: 5px 0 5px 10px;
+}
+
+input, select {
+  height: 30px;
+}
+
+select {
+  width: 93vw;
 }
 
 textarea {
-  height: 75px;
-  width: 125px;
+  height: 150px;
+  color: #efefef;
 }
 
+::-webkit-input-placeholder {
+  color: #4c4c4c;
+  font-weight: 600;
+  font-style: italic;
+}
+
+select {
+  color: #efefef;
+  border: 2px solid #9f9f9f;
+}
 /*Layout*/
 
 
@@ -27,21 +56,83 @@ textarea {
 /*Module*/
 .forms {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
 }
 
 .column1, .column2, .column3 {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  margin: 20px 10px 20px 20px;
-  width: 30%;
-  height: 500px;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
 }
 
+.form-item {
+  margin: 0 0 20px 0;
+}
 
+.form-item:last-child {
+  margin-bottom: 0;
+}
 
 /*State*/
+input:focus, select:focus {
+  border: 2px solid #002266;
+}
 
+@media screen and (min-width: 500px) {
+  textarea, input {
+    width: 40vw;
+  }
 
+  select {
+    width: 42vw;
+  }
 
-/*Util*/
+  .forms {
+    align-items: center;
+    width: 100%;
+  }
+
+  .column1, .column2 {
+    width: 50%;
+  }
+
+  .column3 {
+    width: 100%;
+  }
+
+  .column3 textarea, .column3 input {
+    width: 90vw;
+  }
+
+  .column3 select {
+    width: 93vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  textarea, input {
+    width: 30vw;
+  }
+
+  select {
+    width: 32vw;
+  }
+
+  .forms {
+    align-items: center;
+    width: 100%;
+  }
+
+  .column1, .column2, .column3 {
+    width: 33%;
+  }
+
+  .column3 textarea, .column3 input, .column3 select {
+    width: 30vw;
+  }
+}
